@@ -4,7 +4,7 @@ import ProfilePicture from '../../assets/profile-pic.png';
 import '../navbar/navbar.css';
 import { Context } from '../../context/Context';
 import { useContext } from 'react';
-import API_URL from '../../config';
+import API_URL from '../../Config';
 
 function NavBar() {
   const { user, dispatch } = useContext(Context);
