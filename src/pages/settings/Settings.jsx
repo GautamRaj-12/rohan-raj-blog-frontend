@@ -3,6 +3,7 @@ import './settings.css';
 import profilePicture from '../../assets/profile-pic.png';
 import { Context } from '../../context/Context';
 import axios from 'axios';
+import API_URL from '../../Config';
 
 function Settings() {
   const [file, setFile] = useState(null);
@@ -12,7 +13,7 @@ function Settings() {
   const [success, setSuccess] = useState(false);
 
   const { user, dispatch } = useContext(Context);
-  const PF = 'http://localhost:5000/images/';
+  const PF = `${API_URL}/images/`;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,11 +31,11 @@ function Settings() {
       data.append('file', file);
       updatedUser.profilePic = filename;
       try {
-        await axios.post('/upload', data);
+        await axios.post(`${API_URL}/upload`, data);
       } catch (err) {}
     }
     try {
-      const res = await axios.put('/users/' + user._id, updatedUser);
+      const res = await axios.put(`${API_URL}/users/` + user._id, updatedUser);
       setSuccess(true);
       dispatch({ type: 'UPDATE_SUCCESS', payload: res.data });
     } catch (err) {

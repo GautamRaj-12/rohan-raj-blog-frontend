@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './register.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import API_URL from '../../Config';
 
 function Register() {
   const [username, setUsername] = useState('');
@@ -13,12 +14,13 @@ function Register() {
     e.preventDefault();
     setError(false);
     try {
-      const res = await axios.post('/auth/register', {
+      const res = await axios.post(`${API_URL}/auth/register`, {
         username,
         email,
         password,
       });
-      res.data && window.location.replace('/login');
+      res.data &&
+        window.location.replace('https://rohanblogs.onrender.com/login');
     } catch (err) {
       setError(true);
     }

@@ -3,12 +3,13 @@ import './singlepost.css';
 import { Link, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { Context } from '../../context/Context';
+import API_URL from '../../Config';
 
 function SinglePost() {
   let location = useLocation();
   const idPath = location.pathname.split('/')[2];
   const [post, setPost] = useState({});
-  const PF = 'http://localhost:5000/images/';
+  const PF = `${API_URL}/images/`;
   const { user } = useContext(Context);
 
   const [title, setTitle] = useState('');
@@ -17,7 +18,7 @@ function SinglePost() {
 
   useEffect(() => {
     const getPost = async () => {
-      const res = await axios.get('/posts/' + idPath);
+      const res = await axios.get(`${API_URL}/posts/` + idPath);
       console.log(res);
       setPost(res.data);
       setTitle(res.data.title);
@@ -28,7 +29,7 @@ function SinglePost() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`/posts/${post._id}`, {
+      await axios.delete(`${API_URL}/posts/${post._id}`, {
         data: { username: user.username },
       });
       window.location.replace('/');
@@ -37,7 +38,7 @@ function SinglePost() {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`/posts/${post._id}`, {
+      await axios.put(`${API_URL}/posts/${post._id}`, {
         username: user.username,
         title: title,
         desc: desc,

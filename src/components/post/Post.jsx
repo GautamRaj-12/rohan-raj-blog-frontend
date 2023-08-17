@@ -2,9 +2,9 @@ import React from 'react';
 import './post.css';
 import postImage from '../../assets/post-test.jpg';
 import { Link } from 'react-router-dom';
-
+import API_URL from '../../Config';
 function Post({ post }) {
-  const PF = 'http://localhost:5000/images/';
+  const PF = `${API_URL}/images/`;
   return (
     <div className='post'>
       {post.photo && <img src={PF + post.photo} alt='' className='postImg' />}

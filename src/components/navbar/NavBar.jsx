@@ -4,10 +4,11 @@ import ProfilePicture from '../../assets/profile-pic.png';
 import '../navbar/navbar.css';
 import { Context } from '../../context/Context';
 import { useContext } from 'react';
+import API_URL from '../../config';
 
 function NavBar() {
   const { user, dispatch } = useContext(Context);
-  const PF = 'http://localhost:5000/images/';
+  const PF = `${API_URL}/images/`;
 
   const handleLogout = () => {
     dispatch({ type: 'LOGOUT' });

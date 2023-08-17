@@ -3,13 +3,13 @@ import Post from '../post/Post';
 import './posts.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-
+import API_URL from '../../Config';
 function Posts({ posts }) {
   const [cats, setCats] = useState([]);
 
   useEffect(() => {
     const getCats = async () => {
-      const res = await axios.get('/categories');
+      const res = await axios.get(`${API_URL}/categories`);
       setCats(res.data);
     };
     getCats();
