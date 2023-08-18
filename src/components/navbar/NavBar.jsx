@@ -83,7 +83,7 @@ function NavBar() {
                     Login
                   </Link>
                   <Link
-                    className='text-white'
+                    className='text-white mx-2'
                     style={{ textDecoration: 'none', fontFamily: 'poppins' }}
                     to='/register'
                   >
@@ -92,7 +92,7 @@ function NavBar() {
                 </>
               )}
 
-              <i className='fa-solid fa-magnifying-glass search-button mx-3'></i>
+              {/* <i className='fa-solid fa-magnifying-glass search-button mx-3'></i> */}
             </div>
           </div>
         </div>

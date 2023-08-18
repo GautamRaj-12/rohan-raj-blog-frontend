@@ -73,12 +73,12 @@ function Register() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div className='mb-3'>
+        <div className='mb-3 inputPassword'>
           <label for='exampleInputPassword1' className='form-label'>
             Password
           </label>
           <input
-            type='password'
+            type={!passShow ? 'password' : 'text'}
             className='form-control'
             id='exampleInputPassword1'
             onChange={(e) => setPassword(e.target.value)}
@@ -86,6 +86,13 @@ function Register() {
             data-bs-placement='bottom'
             title='Password must contain 8 characters including an UPPERCASE, a LOWERCASE and a NUMBER'
           />
+          <span onClick={() => setPassShow(!passShow)} className='showPassword'>
+            {!passShow ? (
+              <i className='fa-regular fa-eye'></i>
+            ) : (
+              <i className='fa-regular fa-eye-slash'></i>
+            )}
+          </span>
         </div>
         <button className='btn btn-success' type='submit'>
           Register
