@@ -1,55 +1,69 @@
-.header{
-    min-height: 90vh;
-    background-image: linear-gradient(rgb(0, 0, 0,0.8),transparent),url('../../assets/gavel-landing-page.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+.header {
+  min-height: 90vh;
+  background-image: linear-gradient(rgb(0, 0, 0, 0.8), transparent),
+    url('../../assets/gavel-landing-page.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 
-    color:white;
+  color: var(--light);
 
-    font-family: poppins;
-}   
-
-.header h2{
-    font-size: 4.2rem;
-    letter-spacing: 5px;
-    font-weight: bold;
-}
-.header h2 div{
-    font-size: 3rem;  
+  font-family: poppins;
 }
 
-.header h3{
+.header h2 {
+  font-size: 4.8rem;
+  letter-spacing: 5px;
+  font-weight: bold;
+  font-family: 'Great Vibes';
+  color: var(--primary);
+}
+.header h2 div {
+  font-size: 3.6rem;
+  font-family: inherit;
+}
+
+.header h3 {
+  font-size: 2rem;
+  font-weight: 900;
+}
+.header h3 div {
+  letter-spacing: 1px;
+}
+.header-span {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-color: var(--primary);
+  letter-spacing: 2px;
+}
+/* Media Query */
+@media screen and (max-width: 768px) {
+  .header h2 {
+    font-size: 3em;
+  }
+  .header h2 div {
     font-size: 2rem;
+  }
+
+  .header h3 {
+    font-size: 1.5rem;
+  }
 }
- /* Media Query */
- @media screen and (max-width:768px) {
-    .header h2{
-        font-size: 3em;
-    }
-    .header h2 div{
-        font-size: 2rem;  
-    }
-    
-    .header h3{
-        font-size: 1.5rem;
-    }
+@media screen and (max-width: 400px) {
+  .header h2 {
+    font-size: 2.4em;
   }
-  @media screen and (max-width:400px) {
-    .header h2{
-        font-size: 2.4em;
-    }
-    .header h2 div{
-        font-size: 1.5rem;  
-    }
-    
-    .header h3{
-        font-size: 1.2rem;
-    }
+  .header h2 div {
+    font-size: 1.5rem;
   }
+
+  .header h3 {
+    font-size: 1.2rem;
+  }
+}
