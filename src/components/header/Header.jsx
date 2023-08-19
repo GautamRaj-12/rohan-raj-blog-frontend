@@ -1,4 +1,5 @@
 import './header.css';
+import 'animate.css';
 
 function Header() {
   return (
